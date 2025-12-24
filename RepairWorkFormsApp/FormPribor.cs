@@ -40,7 +40,7 @@ namespace RepairWorkFormsApp
         }
         private void FormPribor_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void PriborGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -39,7 +39,7 @@
             PriborGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             PriborGrid.Location = new Point(47, 24);
             PriborGrid.Name = "PriborGrid";
-            PriborGrid.Size = new Size(704, 366);
+            PriborGrid.Size = new Size(410, 366);
             PriborGrid.TabIndex = 0;
             PriborGrid.CellContentClick += PriborGrid_CellContentClick;
             // 
@@ -55,7 +55,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(540, 413);
+            button2.Location = new Point(316, 411);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(505, 450);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(PriborGrid);

@@ -1,0 +1,63 @@
+-- Использование существующей базы данных
+USE RepairWorks;
+GO
+
+-- Создание таблицы "Мастера"
+IF OBJECT_ID('dbo.masters', 'U') IS NOT NULL
+    DROP TABLE dbo.masters;
+GO
+
+CREATE TABLE dbo.masters
+(
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    last_name NVARCHAR(50) NOT NULL,
+    first_name NVARCHAR(50) NOT NULL,
+    middle_name NVARCHAR(50) NULL,
+    qualification NVARCHAR(50) NOT NULL,
+    hire_date DATE NOT NULL
+);
+GO
+
+-- Создание таблицы "Приборы"
+IF OBJECT_ID('dbo.devices', 'U') IS NOT NULL
+    DROP TABLE dbo.devices;
+GO
+
+CREATE TABLE dbo.devices
+(
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(100) NOT NULL,
+    type NVARCHAR(50) NOT NULL,
+    production_date DATE NULL
+);
+GO
+
+-- Создание таблицы "Ремонтные работы"
+IF OBJECT_ID('dbo.repair_jobs', 'U') IS NOT NULL
+    DROP TABLE dbo.repair_jobs;
+GO
+
+CREATE TABLE dbo.repair_jobs
+(
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    device_id INT NOT NULL,
+    master_id INT NOT NULL,
+    owner_name NVARCHAR(100) NOT NULL,
+    received_date DATE NOT NULL,
+    breakdown NVARCHAR(200) NOT NULL,
+    repair_cost DECIMAL(10, 2) NOT NULL,
+    
+    -- Внешние ключи
+    CONSTRAINT fk_repair_jobs_devices 
+        FOREIGN KEY (device_id) 
+        REFERENCES dbo.devices(id) 
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE,
+    
+    CONSTRAINT fk_repair_jobs_masters 
+        FOREIGN KEY (master_id) 
+        REFERENCES dbo.masters(id) 
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE
+);
+GO
