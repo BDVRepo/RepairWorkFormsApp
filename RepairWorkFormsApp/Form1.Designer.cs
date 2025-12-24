@@ -36,6 +36,7 @@
             ПриборыToolStripMenuItem = new ToolStripMenuItem();
             редактироватьToolStripMenuItem = new ToolStripMenuItem();
             удалитьToolStripMenuItem = new ToolStripMenuItem();
+            учётВыполненныхРаботToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)MasterGrid).BeginInit();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
@@ -71,29 +72,37 @@
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { ПриборыToolStripMenuItem, редактироватьToolStripMenuItem, удалитьToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { ПриборыToolStripMenuItem, редактироватьToolStripMenuItem, удалитьToolStripMenuItem, учётВыполненныхРаботToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(155, 70);
+            contextMenuStrip1.Size = new Size(215, 114);
             // 
             // ПриборыToolStripMenuItem
             // 
             ПриборыToolStripMenuItem.Name = "ПриборыToolStripMenuItem";
-            ПриборыToolStripMenuItem.Size = new Size(154, 22);
+            ПриборыToolStripMenuItem.Size = new Size(214, 22);
             ПриборыToolStripMenuItem.Text = "Приборы";
+            ПриборыToolStripMenuItem.Click += ПриборыToolStripMenuItem_Click;
             // 
             // редактироватьToolStripMenuItem
             // 
             редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            редактироватьToolStripMenuItem.Size = new Size(154, 22);
+            редактироватьToolStripMenuItem.Size = new Size(214, 22);
             редактироватьToolStripMenuItem.Text = "Редактировать";
             редактироватьToolStripMenuItem.Click += редактироватьToolStripMenuItem_Click;
             // 
             // удалитьToolStripMenuItem
             // 
             удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            удалитьToolStripMenuItem.Size = new Size(154, 22);
+            удалитьToolStripMenuItem.Size = new Size(214, 22);
             удалитьToolStripMenuItem.Text = "Удалить";
             удалитьToolStripMenuItem.Click += удалитьToolStripMenuItem_Click;
+            // 
+            // учётВыполненныхРаботToolStripMenuItem
+            // 
+            учётВыполненныхРаботToolStripMenuItem.Name = "учётВыполненныхРаботToolStripMenuItem";
+            учётВыполненныхРаботToolStripMenuItem.Size = new Size(214, 22);
+            учётВыполненныхРаботToolStripMenuItem.Text = "Учёт выполненных работ";
+            учётВыполненныхРаботToolStripMenuItem.Click += учётВыполненныхРаботToolStripMenuItem_Click;
             // 
             // MasterForm
             // 
@@ -120,5 +129,6 @@
         private ToolStripMenuItem ПриборыToolStripMenuItem;
         private ToolStripMenuItem редактироватьToolStripMenuItem;
         private ToolStripMenuItem удалитьToolStripMenuItem;
+        private ToolStripMenuItem учётВыполненныхРаботToolStripMenuItem;
     }
 }

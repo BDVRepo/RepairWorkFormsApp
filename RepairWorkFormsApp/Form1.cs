@@ -42,10 +42,10 @@ namespace RepairWorkFormsApp
                 MasterGrid!.Columns["Qualification"]!.HeaderText = "Разряд";
                 MasterGrid!.Columns["Qualification"]!.DisplayIndex = 4;
 
-                MasterGrid!.Columns["HireDate"]!.HeaderText = "Дата приема на работу";
+                MasterGrid!.Columns["HireDate"]!.HeaderText = "Дата найма";
                 MasterGrid!.Columns["HireDate"]!.DisplayIndex = 5;
 
-                MasterGrid!.Columns["Count"]!.HeaderText = "Выполнено ремонтных работ";
+                MasterGrid!.Columns["Count"]!.HeaderText = "Выполнено работ";
                 MasterGrid!.Columns["Count"]!.DisplayIndex = 6;
 
                 MasterGrid!.Refresh();
@@ -95,6 +95,22 @@ namespace RepairWorkFormsApp
                 db.SaveChanges();
             }
             this.LoadData();
+        }
+
+        private void ПриборыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPribor frm = new FormPribor(Convert.ToInt32(MasterGrid.SelectedRows[0].Cells["Id"].Value));
+
+            frm.Owner = this;
+
+            frm.Show();
+        }
+
+        private void учётВыполненныхРаботToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormWorks frm = new FormWorks();
+            frm.Show();
         }
     }
 }
